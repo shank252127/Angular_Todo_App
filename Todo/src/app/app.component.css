@@ -1,0 +1,61 @@
+.container {
+  width: 400px;
+  margin-top: 10%;
+  border: thin;
+  border-radius: 5px;
+  background-color: inherit;
+  backdrop-filter: blur(20px);
+}
+
+.ul > li > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ul button {
+  margin-left: 5px;
+}
+.ul li {
+  margin-top: 5px;
+}
+.todo-form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.todo-form input {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+body {
+  background-image: url("../assets/images/back.jpg");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.space {
+  border: solid transparent;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  color: white;
+  font-family: "Calibri";
+}
+.cut {
+  text-decoration: line-through;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 250px;
+    margin-top: 10%;
+    border: thin;
+    border-radius: 5px;
+    background-color: inherit;
+    backdrop-filter: blur(20px);
+  }
+}

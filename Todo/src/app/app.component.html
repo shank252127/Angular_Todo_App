@@ -1,0 +1,51 @@
+<body>
+  <div class="image"></div>
+  <div class="container">
+    <div class="space">
+      <h6><b>To Do List :</b></h6>
+      <form class="todo-form" #v="ngForm" (ngSubmit)="onSubmit(v)">
+        <input type="text" id="title" ngModel name="title" />
+        <div>
+          <button type="submit" class="btn-floating btn-small waves-effect waves-light green">
+            <i class="material-icons">add</i>
+          </button>
+        </div>
+      </form>
+      <ul class="ul">
+        <li *ngFor="let todo of todos">
+          <div *ngIf="!this.todo.isComplete">
+            <div>{{ this.todo.title }}</div>
+            <div>
+              <button (click)="onComplete(this.todo.id)" class="btn-floating btn-small waves-effect waves-light blue">
+                <i class="material-icons">check</i>
+              </button>
+              <button (click)="onDelete(this.todo.id)" class="btn-floating btn-small waves-effect waves-light red">
+                <i class="material-icons">delete</i>
+              </button>
+            </div>
+          </div>
+        </li>
+        <div *ngIf="showNo" style="text-align: center;">
+          <p><i>Let's Todo...</i></p>
+        </div>
+        <br />
+        <h6><b> Completed List</b></h6>
+        <hr />
+        <br />
+        <li class="cut" *ngFor="let todo of todos">
+          <div *ngIf="this.todo.isComplete">
+            <div>{{ this.todo.title }}</div>
+            <div>
+              <button (click)="onUndo(this.todo.id)" class="btn-floating btn-small waves-effect waves-light red">
+                <i class="material-icons">replay</i>
+              </button>
+              <button (click)="onDelete(this.todo.id)" class="btn-floating btn-small waves-effect waves-light red">
+                <i class="material-icons">delete</i>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
